@@ -7,16 +7,48 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    * {
+      font-family: "Press Start 2P";
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
+    var plugins = []
+    var repo = 'https://github.com/lamtsui0620/my-docs'
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: '怼怼的 Blog\'s',
+      repo: repo,
+      maxLevel: 6,
+      auto2top: true,
+      loadNavbar: 'nav.md',
+      loadSidebar: 'sidebar.md',
+      basePath: '',
+      // homepage: 'README.md',
+      // coverpage: 'coverpage.md',
+      autoHeader: false, // related with loadSidebar
+      executeScript: false,
+      noEmoji: false,
+      mergeNavbar: true,
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      externalLinkTarget: '_blank',
+      routerMode: location.hostname === 'localhost' ? 'hash' : 'history',
+      plugins: plugins,
+      toc: { // for https://github.com/justintien/docsify-plugin-toc
+        tocMaxLevel: 5,
+        target: 'h2, h3, h4, h5, h6'
+      }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//unpkg.com/docsify-plugin-toc"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-java.min.js"></script>
 </body>
 </html>
